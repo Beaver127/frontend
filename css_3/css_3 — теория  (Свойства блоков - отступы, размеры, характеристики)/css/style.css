@@ -1,0 +1,107 @@
+/* обнуление стилей браузеров для 
+коректной верстки*/
+
+/* убираем отступы */
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+
+}
+/*для удобной верстки 
+приснии отступов padding размеры блока не увеличиваются
+при таки свойствах(без этих параметров блок будет увеличиваться
+при добавлении отступов)
+*/
+*,*:before,*:after {
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+/* убираем линии и обводки*/
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+/* делаем html5 теги блочными*/
+nav,footer,header,aside {display: block;}
+/* уравнивание шрифтов и окна */
+html, body {
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+/* заставляем эти теги наследовать 
+шрифт так как по 
+умолчанию они не наследют его*/
+input,button,textarea{
+	font-family: inherit;
+}
+
+/* убираем дефектные стили браузеров*/
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+/*  обнуляем все заголовки <h> */
+h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
+
+/* блочный тег*/
+.example-block {
+	/* сверху справа снизу слева 
+	эти свойства работают на блочные теги а на строчные нет
+	только к примеру на несколько срочных действуют
+	такие как img
+padding: 10%;
+margin: 10px 10px 10px 10px; - внешние отступы
+padding: 10px 20px 30px 5px; - внутренние отступы
+width: 500px;
+max-width: 500px; - больше заданного блок не расширится
+min-width: 500px; - меньше чем заданный размер блок не будет становится
+hight: 100px;
+max-height: 200px; - если контент привышает макс размер высоты то
+он выходит за границы блока
+min-height: 200px; - в любом случае будет минимальеая высота блока
+расширятся на значение которое указали но так же высота может становиться 
+больше так как ограничения на макс высоту нет
+
+padding: включается в ширину блока;
+margin: не включется в ширину блока;
+border: включается в щирину блока;
+
+если контент привышает допустымый размер блока то
+overflow:visible; - показывает выпирающий контент
+overflow:hidden; - скрывает контент
+overflow:scroll; - включает полосу прокрутки если контент вылазит
+overflow:auto; - полосы прокуртки только когда они нужны
+
+
+управление состоянием блока
+display: block; - делает блочным блоком
+display: inline; - делает строчным блоком
+//занимает ширину равную контенту но при этом свойтсва блока 
+//начинают на него работать
+display: inline-block; - делает блок гибридом между(block & inline)
+display: none; - удаляет элемент из документа
+	*/
+	border: 1px solid #000;
+	padding: 20px;
+	margin: 0 0 30px 0;
+}
+
+/* строчный тег */
+.example-string {
+	display: inline-block;
+	padding: 20px;
+	width: 200px;
+	border: 1px solid #000;
+
+}

@@ -1,0 +1,117 @@
+/* обнуление стилей браузеров для 
+коректной верстки*/
+
+/* убираем отступы */
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+
+}
+/*для удобной верстки */
+*,*:before,*:after {
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+/* убираем линии и обводки*/
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+/* делаем html5 теги блочными*/
+nav,footer,header,aside {display: block;}
+/* уравнивание шрифтов и окна */
+html, body {
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+/* заставляем эти теги наследовать 
+шрифт так как по 
+умолчанию они не наследют его*/
+input,button,textarea{
+	font-family: inherit;
+}
+
+/* убираем дефектные стили браузеров*/
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+/*  обнуляем все заголовки <h> */
+h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
+
+/* СТИЛИ ДЛЯ ШРИФТА */
+
+/* шрифт */
+.arial {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+/* размер */
+.fontsize30 {
+	font-size: 30px;
+}
+/* стиль(наклонный /жирный)*/
+.italic {
+	font-style: italic;
+}
+/* насыщеность */
+.font700 {
+	font-weight: 700;
+}
+/* цвет 
+color: red;
+	color: rgb(255,0,0);
+*/
+.colorred {
+	color: #f00f00;
+}
+/* выравнивание текста по ширине */
+.textright {
+	text-align: right;
+}
+/* декорации к тексту к примеру нижнее подчеркивание*/
+.decoration {
+	text-decoration: underline;
+}
+/* тень шрифта
+по горизонтали смещение/по вертикали смещение/размерзамытия тени/цвет */
+.shadow {
+	text-shadow: 2px 2px 4px #000000;
+}
+
+/* меняет регистр текста в нижний или верхний и доп функции*/
+.uppercase {
+	text-transform: uppercase;
+}
+/* Абзац или отступ*/
+.indent {
+	text-indent: 50px;
+}
+/* пробелы между символами*/
+.lspace {
+	letter-spacing: 5px;
+}
+/* пробелы между словами(растояние) */
+.wspace {
+	word-spacing: 5px;
+}
+/* управление переносом пробелом и так далее
+white-space: nowrap; - запрещает перенос строки
+*/
+.whitespace {
+	white-space: nowrap;
+}
+/* отступ по горизонтали по отношению к другим строкам*/
+.lineheight {
+	line-height: 100px;
+}

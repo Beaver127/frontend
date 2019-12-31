@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<!-- указываем язык содержимого -->
+<html lang="ru">
+<head>
+	<title>Знакомство с html тегами часть 3(Формы)</title>
+	<!-- кодировка страницы -->
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+
+	<!-- 
+	action: куда перенаправляем данные из формы
+	method: тип запроса (для передачи паролей используется post)
+	enctype: тип для передачи файлов
+	-->
+	<form action="#" method="get" enctype="multipart/form-data"></form>
+
+
+	<!-- 
+	type: тип поля (кнопка\пароль\емаил)
+	name: для идификации и передачи параметров по этому атрибуту мы определяем название передаваемого атрибута
+	value: значение которое будет находится в гашем поле
+	placeholder: для подсказки в самом поле (при записи в поле символов подсказка исчезнет)
+	disable: делает поле неактивным и при отправки формы данные с поля не идут на серв
+	tabindex="1":указывает порядок перехода по полям через TAB
+	-->
+	<div>
+		<input tabindex="1" placeholder="Введите сообщение" type="text" name="username" value="Beaver_123" />
+	</div>
+	<div>
+		 <!-- переключит в мобильном на клавиатуру цифр-->
+		 <!-- кладем строчный блок в div чтобы поле ввода отображалось с новой строки  -->
+	<input type="tel" name="tel" />
+	</div>
+
+
+	<!-- checked: параметр для активации по умалчанию поля в radio групе
+		для radio buttton tabindex должен быть идентичен для каждой кнопки
+	-->
+	<div>
+		<p><input tabindex="2" checked type="radio" name="beer" value="lager" />Светлое пиво</p>
+		<p><input tabindex="2" type="radio" name="beer" value="dark" />Темное пиво</p>
+	</div>	
+	<br/>
+	<!-- при смене name мы меняем название группы наших radio кнопок-->
+	<div>
+		<p><input type="radio" name="beer2" value="lager" />Светлое пиво</p>
+		<p><input checked type="radio" name="beer2" value="dark" />Темное пиво</p>
+	</div>	
+
+	<br/>
+	<div>
+		<p><input checked type="checkbox" name="car" value="yes" />Наличие авто</p>
+		<p><input type="checkbox2" name="car" value="yes" />Наличие авто 2</p>
+		<p><input checked type="checkbox3" name="car" value="yes" />Наличие авто 3</p>
+		<p><input type="checkbox4" name="car" value="yes" />Наличие авто 4</p>
+	</div>	
+	<br/>
+	<div>
+		<p><input type="file" name="photo"/></p>
+	</div>
+	<!-- атрибуты name не должны повторятбся иначе серв не поймет логики 
+	исключение это radio группы кнопок -->
+	<div>
+		<textarea name="text"></textarea>
+	</div>
+	<br />
+
+	<!-- выпдающий список 
+	multiple: для множественного выбора
+	-->
+	<div>
+		<select multiple name="color">
+			<option value="red">Красный</option>
+			<option value="yellow">Желтый</option>
+			<option value="blue">Синий</option>
+		</select>
+	</div>
+	<br/>
+	<div>
+		<select name="color1">
+			<option value="red">Красный1</option>
+			<option selected value="yellow">Желтый1</option>
+			<option value="blue">Синий1</option>
+		</select>
+	</div>
+	<br/>
+	<!-- 
+	type="submit":отправит все данные с формы на серв
+	type="reset":очистит все данные из формы
+	-->
+	<div>
+		<button type="submit">Отправить</button>
+	</div>
+
+	
+</body>
+</html>
