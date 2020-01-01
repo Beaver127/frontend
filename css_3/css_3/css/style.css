@@ -85,9 +85,9 @@ p {
 	margin: 0 0 30px 0;
 }
 .block_two {
-	height: 100px;
 	line-height: 25px;
 	margin: 0 0 30px 0;
+	padding: 0 0 30px 0;
 }
 .block_three {
 	display: inline-block;
