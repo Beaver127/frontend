@@ -58,100 +58,60 @@ img{vertical-align: top;}
 
 /*  обнуляем все заголовки <h> */
 h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
-
 body {
-
-	padding: 40px;
-	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+padding: 40px;
+font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
-
-.list {
-	margin: 0 0 30px 0;
+.block {
+	border: 5px solid red;
+	/* 
+	при назначении ширины 
+	и при использовании 
+	следующей комбинации отступов 
+	блок распологается по 
+	*/
+	max-width: 800px;
+	margin: 0px auto;
+	height: 800px;
 }
-.list li {
-	font-size: 20px;
-	line-height: 36px;
-	color: #273d46;
-
-}
-.list li:first-child {
-text-decoration: line-through;
-}
-.list li:nth-child(2) {
+.block div {
+	line-height: 50px;
+font-size: 18px;
 font-weight: 700;
+text-align: center;
 }
-.list li:nth-child(3) {
-	font-style: italic;
+.bloc__1 {
+background-color: #ece89d;
 }
-.list li:last-child {
-	text-transform: uppercase;
+.bloc__2 {
+background-color: #5e5373;
+color: #fff;
+position: relative;
+left: 50px;
+top: 100px;
 }
+.bloc__3 {
+background-color: #18b5a4;
+}
+/*
+Позыционирование:
+---
+position: static; - по умалчанию
+---
+position: relative;  - позиционирование
+устанавливается относительно его изначального положения в коде
+можно использовать такие свойства:
+left: 0;
+top: 0;
+right: 0;
+bottom: 0;
+так же можно использовать отрицательные значения и одновременно все 4 свойтсва нельзя использовать только или
+left:0;
+top:0;
+или 
+right:0;
+bottom:0;
 
-.list li:before {
-	content: '';
-	height: 20px;
-	width: 30px;
-	background: url('../img/icons/icon.png') left no-repeat;
-	display: inline-block;
-}
+---
 
-.list li:first-child:hover {
-	text-decoration: none;
-}
-.list li:nth-child(2):hover {
-	color: red;
-	font-weight: 400;
-}
-.list li:nth-child(3):hover {
-	font-style: normal;
-}
-.list li:last-child:hover {
-	text-transform: none;
-}
-.list li:nth-child(2):hover:before {
-	background: url('../img/icons/icon_red.png') left no-repeat;
-}
-.submit {
-color: #ffffff;
-box-shadow: 0 6px 40px rgba(128, 183, 179, 0.54);
-font-size: 18px;
-text-transform: uppercase;
-background-color: #80b7b3;
-letter-spacing: 2.8px;
-padding: 10px 25px;
-border-radius: 25px;
-margin: 0 0 30px 0;
-}
-
-.submit:hover:after {
-content: '→';
-
-}
-.submit:active:after {
-content: '→';
-
-}
-.submit:hover {
-background-color: #3a5856;
-}
-.submit:active {
-	background-color: #818181;
-	box-shadow: none;
-}
-.first {
-font-size: 18px;
-color: #000000;
-line-height: 28px;
-margin: 0 0 30px 0;
-}
-.first:first-line {
-	color: #ff0000;
-}
-.second {
-color: #000000;
-font-size: 18px;
-line-height: 28px;
-}
-.second:first-letter {
-	color: #ff0000;
-}
+*/
