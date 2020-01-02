@@ -1,0 +1,209 @@
+@charset "UTF-8";
+/* импорт кода */
+/*обнуление стилей*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*
+создаем шаблон стилей чтобы потом применять его в 
+нужных местах
+
+добавление:
+
+.link-2 {
+	font-size: $fz;
+	@extend %tplborder;
+}
+
+
+
+*/
+/*
+добавление стиля шаблона 
+в зависимости от высоты илди расположения 
+шаблона он будет действоать по разному на стиль 
+если выше всех то будет задаваться стиль изначально 
+а уже ниже код может его перезаписывать 
+
+таким жк образом можно создать класс:
+
+работать так же 
+.tplborder {
+	border: 5px solid #000;
+}
+*/
+.link-2 {
+  border: 5px solid #000;
+}
+
+/*
+работает как метод \ принимает в параметры 
+значе
+ */
+/* создание переменных 
+чтобы их использовать нужно подставить название переменнной по днужное свойство 
+color: $color_1;*/
+/*
+Синтаксис scss для работы со стилями
+
+.block {
+	padding: 40px;
+	font-size: 30px;
+	line-height: 80px;
+вложенный элемент в .block будет стилизирован 
+а так же мы указываем что будем обращаться
+к тегам <p> только первой вложенности
+	>p{
+		color: red;
+	}
+
+	.block__text {
+		font-size: 80px;
+		//вложенность
+		span {
+		color: green;
+	}
+	}
+}
+
+*/
+.block {
+  /* результат: width: 31.25%; 
+
+	умее работать с арифметическими операциями
+	и выдавать результат */
+  width: 31.25%;
+  width: 50%;
+  background: grey;
+  padding: 40px;
+  font-size: 80px;
+  line-height: 80px;
+  /* так же если к блоку применяются сразу несколько классов то можно обратиться ко одниму из них и задать нужный стиль*/
+}
+
+.block > p {
+  color: red;
+}
+
+.block .block__text {
+  font-size: 80px;
+}
+
+.block .block__text span {
+  color: green;
+}
+
+.block.big {
+  font-size: 80px;
+}
+
+/*
+.link {
+color: red;
+text-decoration: underline;
+//с помощью такого синтаксиса можем
+указывать псевдоклассы к примеру 
+при наведении на ссылку
+
+&:hover {
+	color: blue;
+}
+&:active {
+	color: grey;
+}
+}
+
+*/
+.link {
+  color: red;
+  text-decoration: underline;
+  /*  символ '&': подставляет на место имя класса
+'.link' и получается что мы придаем стиль той ссылке которая находится в блоке '.block'*/
+}
+
+.block .link {
+  color: black;
+}
+
+.link:hover {
+  color: blue;
+}
+
+.link:active {
+  color: grey;
+}
+
+.link-2 {
+  font-size: 100px;
+  color: green;
+}
