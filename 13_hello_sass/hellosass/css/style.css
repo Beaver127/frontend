@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* импорт кода */
 /*обнуление стилей*/
 * {
   padding: 0;
@@ -74,136 +73,416 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-/*
-создаем шаблон стилей чтобы потом применять его в 
-нужных местах
-
-добавление:
-
-.link-2 {
-	font-size: $fz;
-	@extend %tplborder;
+.logo, .about_product, .specifications, .screens, .buy_logo, .buy, .contact_logo {
+  padding: 80px 80px;
 }
 
-
-
-*/
-/*
-добавление стиля шаблона 
-в зависимости от высоты илди расположения 
-шаблона он будет действоать по разному на стиль 
-если выше всех то будет задаваться стиль изначально 
-а уже ниже код может его перезаписывать 
-
-таким жк образом можно создать класс:
-
-работать так же 
-.tplborder {
-	border: 5px solid #000;
-}
-*/
-.link-2 {
-  border: 5px solid #000;
+.product_name, .about_product .about h2, .specifications .logo_characters h2, .specifications .two_list p, .screen_logo, .rewiews_logo, .buy_logo, .contact_logo, .footer {
+  text-align: center;
+  margin: 0 auto;
 }
 
-/*
-работает как метод \ принимает в параметры 
-значе
- */
-/* создание переменных 
-чтобы их использовать нужно подставить название переменнной по днужное свойство 
-color: $color_1;*/
-/*
-Синтаксис scss для работы со стилями
-
-.block {
-	padding: 40px;
-	font-size: 30px;
-	line-height: 80px;
-вложенный элемент в .block будет стилизирован 
-а так же мы указываем что будем обращаться
-к тегам <p> только первой вложенности
-	>p{
-		color: red;
-	}
-
-	.block__text {
-		font-size: 80px;
-		//вложенность
-		span {
-		color: green;
-	}
-	}
+body {
+  background-color: #a8ffab;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
-*/
-.block {
-  /* результат: width: 31.25%; 
-
-	умее работать с арифметическими операциями
-	и выдавать результат */
-  width: 31.25%;
-  width: 50%;
-  background: grey;
-  padding: 40px;
-  font-size: 80px;
-  line-height: 80px;
-  /* так же если к блоку применяются сразу несколько классов то можно обратиться ко одниму из них и задать нужный стиль*/
+body ::-webkit-input-placeholder {
+  color: #09360b;
 }
 
-.block > p {
-  color: red;
+body :-moz-placeholder {
+  color: #09360b;
 }
 
-.block .block__text {
-  font-size: 80px;
+body ::-moz-placeholder {
+  color: #09360b;
 }
 
-.block .block__text span {
-  color: green;
+body :-ms-input-placeholder {
+  color: #09360b;
 }
 
-.block.big {
-  font-size: 80px;
+.product_name {
+  color: #09360b;
+  font-size: 30px;
+  line-height: 34px;
+  padding: 30px 0 0 0;
 }
 
-/*
-.link {
-color: red;
-text-decoration: underline;
-//с помощью такого синтаксиса можем
-указывать псевдоклассы к примеру 
-при наведении на ссылку
-
-&:hover {
-	color: blue;
-}
-&:active {
-	color: grey;
-}
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
-*/
-.link {
-  color: red;
-  text-decoration: underline;
-  /*  символ '&': подставляет на место имя класса
-'.link' и получается что мы придаем стиль той ссылке которая находится в блоке '.block'*/
+.logo .list {
+  color: #09360b;
+  font-size: 30px;
+  line-height: 35px;
 }
 
-.block .link {
-  color: black;
+.logo .list li {
+  position: relative;
+  padding: 0 0 0 30px;
 }
 
-.link:hover {
-  color: blue;
+.logo .list li:before {
+  content: '';
+  background: url("../img/icons/icon.png") 0 0 no-repeat;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 9px;
+  left: -6px;
 }
 
-.link:active {
+.logo .img_block {
+  padding: 20px 20px 0 20px;
+  margin: 0 0 0 200px;
+}
+
+.about_product {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.about_product .about h2 {
+  color: #09360b;
+  font-size: 30px;
+  line-height: 36px;
+  margin: 0 0 30px 0;
+}
+
+.about_product .about p {
+  color: #333333;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 10px 0;
+}
+
+.about_product .img_rezor {
+  margin: 70px 0 0 60px;
+  -webkit-box-shadow: 0 0 30px 10px #000;
+  box-shadow: 0 0 30px 10px #000;
+}
+
+.specifications .logo_characters h2 {
+  color: #09360b;
+  font-size: 30px;
+  line-height: 34px;
+  padding: 30px 0 0 0;
+}
+
+.specifications .two_list {
+  padding: 0 0 0 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.specifications .two_list p {
+  color: #333;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 30px 0 30px 0;
+}
+
+.specifications .two_list ul:nth-child(2) {
+  margin: 0 0 0 40px;
+}
+
+.specifications .two_list ul li {
+  position: relative;
+  color: #333;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.specifications .two_list ul li:before {
+  content: '';
+  background: url("../img/icons/plus.png") 0 0 no-repeat;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 2px;
+  left: -30px;
+}
+
+.screen_logo {
+  padding: 20px 0;
+  color: #09360b;
+  font-size: 30px;
+  line-height: 34px;
+  background-color: #fff;
+}
+
+.screens {
+  padding: 0 0 0 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+  grid-template-columns: 50% 50%;
+  background-color: #fff;
+}
+
+.screens div {
+  height: 300px;
+  border: 1px solid #000;
+  margin: 5px;
+}
+
+.screens div:first-child {
+  padding: 30px 0 0 150px;
+}
+
+.screens div:nth-child(2) {
+  padding: 30px 0 0 100px;
+}
+
+.screens div:nth-child(3) {
+  padding: 50px 0 0 150px;
+}
+
+.screens div:nth-child(4) {
+  padding: 50px 0 0 50px;
+}
+
+.rewiews_logo {
+  padding: 30px 0;
+  color: #09360b;
+  font-size: 30px;
+  line-height: 34px;
+}
+
+.reviews {
+  justify-items: start;
+  padding: 0 0 50px 20%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+  grid-template-columns: 50% 50%;
+  grid-row-gap: 50px;
+}
+
+.reviews div {
+  background-color: #87cc18;
+  font-style: italic;
+  padding: 20px 20px 40px 20px;
+  width: 300px;
+  position: relative;
+  color: #09360b;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.reviews div p {
+  position: absolute;
+  left: 10px;
+  bottom: 5px;
+  font-style: normal;
   color: grey;
+  font-size: 14px;
+  line-height: 16px;
 }
 
-.link-2 {
-  font-size: 100px;
-  color: green;
+.reviews div span:before {
+  content: '';
+  background-color: #8f8f8f;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  position: absolute;
+  left: -150px;
+  top: 5px;
+}
+
+.reviews div:before {
+  content: "";
+  border: solid transparent;
+  position: absolute;
+  right: 100%;
+  top: 15px;
+  border-right-color: #87cc18;
+  border-width: 15px;
+}
+
+.buy_logo {
+  background-color: #fff;
+  color: #09360b;
+  font-size: 30px;
+  line-height: 34px;
+}
+
+.buy {
+  background-color: #fff;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 33% 33% 33%;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.buy div {
+  position: relative;
+  padding: 0 0 30px 0;
+  border-radius: 25px;
+  width: 300px;
+  background-color: #a8ffab;
+}
+
+.buy div p {
+  padding: 20px 0;
+}
+
+.buy div p:first-child {
+  text-align: center;
+  color: #09360b;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.buy div p:nth-child(2) {
+  text-align: center;
+  background-color: #fff;
+  color: #09360b;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.buy div ol {
+  padding: 10px 10px 40px 40px;
+  color: #09360b;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.buy div a {
+  display: inline-block;
+  padding: 10px;
+  background-color: #fff;
+  color: #09360b;
+  font-size: 16px;
+  line-height: 24px;
+  width: 80%;
+  border-radius: 5px;
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+}
+
+.contact_logo {
+  color: #09360b;
+  font-size: 30px;
+  line-height: 34px;
+}
+
+.contacts {
+  padding: 0 0 30px 0;
+  margin: 0 0 0 20%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 33%;
+  grid-template-columns: 50% 33%;
+}
+
+.contacts form {
+  padding: 0 20px 0 0;
+}
+
+.contacts form input {
+  width: 100%;
+  border-radius: 10px;
+  margin: 0 0 10px 0;
+  padding: 10px;
+  display: block;
+  color: #09360b;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.contacts form input:nth-child(3) {
+  padding: 10px 0 200px 10px;
+}
+
+.contacts form button {
+  color: #09360b;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0 0 0 40%;
+  background-color: #fff;
+}
+
+.contacts .links {
+  margin: 0 0 0 50px;
+}
+
+.contacts .links ul li {
+  padding: 3px 10px;
+  color: #09360b;
+  font-size: 20px;
+  line-height: 30px;
+  position: relative;
+}
+
+.contacts .links ul li:first-child:before {
+  content: '';
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  background: url("../img/icons/skype.png") 0 0 no-repeat;
+  top: 5px;
+  left: -30px;
+}
+
+.contacts .links ul li:nth-child(2):before {
+  content: '';
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  background: url("../img/icons/vk.png") 0 0 no-repeat;
+  top: 5px;
+  left: -30px;
+}
+
+.contacts .links ul li:nth-child(3):before {
+  content: '';
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  background: url("../img/icons/email.png") 0 0 no-repeat;
+  top: 5px;
+  left: -30px;
+}
+
+.contacts .links ul li:last-child:before {
+  content: '';
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  background: url("../img/icons/phone.png") 0 0 no-repeat;
+  top: 5px;
+  left: -30px;
+}
+
+.footer {
+  color: #09360b;
+  font-size: 16px;
+  line-height: 18px;
+  padding: 20px 0;
+  background-color: #fff;
 }

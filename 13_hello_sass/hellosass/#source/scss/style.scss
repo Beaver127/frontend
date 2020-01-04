@@ -1,151 +1,347 @@
-/* импорт кода */
 @import "nullstyle.scss";
 
-
-//этот коментарий нужен для SCSS и не переносится в //исходник прикомпиляции
-
-
-
-/*
-создаем шаблон стилей чтобы потом применять его в 
-нужных местах
-
-добавление:
-
-.link-2 {
-	font-size: $fz;
-	@extend %tplborder;
+@mixin placeholder {
+::-webkit-input-placeholder{color: $dark_green;}
+:-moz-placeholder{color: $dark_green;}
+::-moz-placeholder{color: $dark_green;}
+:-ms-input-placeholder{color: $dark_green;}
 }
 
-
-
-*/
-
-/*
-добавление стиля шаблона 
-в зависимости от высоты илди расположения 
-шаблона он будет действоать по разному на стиль 
-если выше всех то будет задаваться стиль изначально 
-а уже ниже код может его перезаписывать 
-
-таким жк образом можно создать класс:
-
-работать так же 
-.tplborder {
-	border: 5px solid #000;
+//отступы
+%paddings {
+padding: 80px 80px;
 }
-*/
-%tplborder {
-	border: 5px solid #000;
+//для шрифта
+@mixin fontz($color, $font-size, $line-height) {
+	color: $color;
+	font-size: $font-size;
+	line-height: $line-height;
+}
+//для заголовков
+%all_h {
+	text-align: center;
+	margin: 0 auto;
 }
 
-/*
-работает как метод \ принимает в параметры 
-значе
- */
-@mixin fontz($f,$c) {
-	font-size: $f;
-	color: $c;
+$bg_main: #a8ffab;
+$bg_reviews: #87cc18;
+$dark_green: #09360b;
+
+
+body {
+	@include placeholder;
+	background-color: $bg_main;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
-
-
-
-
-/* создание переменных 
-чтобы их использовать нужно подставить название переменнной по днужное свойство 
-color: $color_1;*/
-$fz: 80px;
-$color_1: #000;
-
-/*
-Синтаксис scss для работы со стилями
-
-.block {
-	padding: 40px;
-	font-size: 30px;
-	line-height: 80px;
-вложенный элемент в .block будет стилизирован 
-а так же мы указываем что будем обращаться
-к тегам <p> только первой вложенности
-	>p{
-		color: red;
+.product_name {
+		@extend %all_h;
+		@include fontz($dark_green,30px,34px);
+		padding: 30px 0 0 0;
+}
+.logo {
+	display: flex;
+	align-items: flex-start;
+	@extend %paddings;
+	
+	.list {
+		@include fontz($dark_green,30px,35px);
+		li {
+		position: relative;
+		padding: 0 0 0 30px;
+		&:before {
+			content: '';
+			background: url('../img/icons/icon.png') 0 0 no-repeat;
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			top: 9px;
+			left: -6px;
+		}
 	}
-
-	.block__text {
-		font-size: 80px;
-		//вложенность
-		span {
-		color: green;
 	}
+	.img_block {
+		padding: 20px 20px 0 20px;
+		margin: 0 0 0 200px;
 	}
 }
 
-*/
-.block {
-	/* результат: width: 31.25%; 
 
-	умее работать с арифметическими операциями
-	и выдавать результат */
-
-	width: 300px / 960px * 100%;
-
-width: 50%;
-	background: grey;
-	padding: 40px;
-	font-size: $fz;
-	line-height: 80px;
-
-	>p{
-		color: red;
+.about_product {
+	@extend %paddings;
+	background-color: #fff;
+	display: flex;
+	align-items: flex-start;
+	.about {
+		
+		//width: 50%;
+		h2 {
+			@extend %all_h;
+			@include fontz($dark_green,30px,36px);
+			margin: 0 0 30px 0;
+		}
+		p {
+			@include fontz(#333333,16px,24px);
+			margin: 0 0 10px 0;
+		}
 	}
-
-	.block__text {
-		font-size: $fz;
-		span {
-		color: green;
-	}
-	}
-	/* так же если к блоку применяются сразу несколько классов то можно обратиться ко одниму из них и задать нужный стиль*/
-	&.big {
-		font-size: $fz;
+	.img_rezor {
+		margin: 70px 0 0 60px;
+		box-shadow: 0 0 30px 10px #000;
 	}
 }
+.specifications {
+	@extend %paddings;
+	.logo_characters h2 {
+		@extend %all_h;
+		@include fontz($dark_green,30px,34px);
+		padding: 30px 0 0 0;
+	}
+	.two_list {
+		p {
+			@extend %all_h;
+			@include fontz(#333,20px,24px);
+			padding: 30px 0 30px 0;
+		}
+		padding: 0 0 0 30%;
+		display: flex;
+		align-items: flex-start;
+		ul:nth-child(2) {
+			margin: 0 0 0 40px;
+		}
+		ul li {
+			position: relative;
+			@include fontz(#333,16px,30px);
+			&:before {
+			content: '';
+			background: url('../img/icons/plus.png') 0 0 no-repeat;
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			top: 2px;
+			left: -30px;
+		}
 
-/*
-.link {
-color: red;
-text-decoration: underline;
-//с помощью такого синтаксиса можем
-указывать псевдоклассы к примеру 
-при наведении на ссылку
+		}
+	}
+}
+.screen_logo {
+	//@extend %paddings;
+	padding: 20px 0;
+	@extend %all_h;
+	@include fontz($dark_green,30px,34px);
+	background-color: #fff;
+}
+.screens {
+	padding: 0 0 0 0;
+	div {
+		height: 300px;
+		border: 1px solid #000;
+		margin: 5px;
+		&:first-child {
+			padding: 30px 0 0 150px;
+		}
+		&:nth-child(2) {
+			padding: 30px 0 0 100px;
+		}
+		&:nth-child(3) {
+			padding: 50px 0 0 150px;
+		}
+		&:nth-child(4) {
+			padding: 50px 0 0 50px;
+		}
+	}
 
-&:hover {
-	color: blue;
+	display: grid; 
+	grid-template-columns: 50% 50%;
+	background-color: #fff;
+	@extend %paddings;
+	//padding: 0 0 0 30%;
 }
-&:active {
-	color: grey;
-}
+.rewiews_logo {
+	padding: 30px 0;
+	@extend %all_h;
+	@include fontz($dark_green,30px,34px);
 }
 
-*/
 
-.link {
-color: red;
-text-decoration: underline;
+.reviews {
+	justify-items: start;
+	padding: 0 0 50px 20%; 
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-row-gap: 50px;
+	div {
+		background-color: $bg_reviews;
+		font-style: italic;
+		padding: 20px 20px 40px 20px;
+		width: 300px;
+		position: relative;
+		@include fontz($dark_green,16px,20px);
+		p {
+			position: absolute;
+			left: 10px;
+			bottom: 5px;
+			font-style: normal;
+			@include fontz(grey,14px,16px);
+		}
+		span:before {
+			content: '';
+			background-color: #8f8f8f;
+			border-radius: 50%;
+			width: 100px;
+			height: 100px;
+			display: inline-block;
+			position: absolute;
+			left:-150px; 
+			top: 5px;
+		}
+		&:before {
+	content: ""; 
+	border: solid transparent;
+	position: absolute;  
+	right: 100%;
+	top: 15px;
+	border-right-color: $bg_reviews;
+	border-width: 15px;
+		}
+	}
+	
+}
 
-/*  символ '&': подставляет на место имя класса
-'.link' и получается что мы придаем стиль той ссылке которая находится в блоке '.block'*/
-.block & {
-	color: black;
+.buy_logo {
+	background-color: #fff;
+	@extend %paddings;
+	@extend %all_h;
+	@include fontz($dark_green,30px,34px);
 }
-&:hover {
-	color: blue;
+.buy {
+	background-color: #fff;
+	@extend %paddings;
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+	div {
+
+		position: relative;
+		padding: 0 0 30px 0;
+		border-radius: 25px;
+		width: 300px;
+		background-color: $bg_main;
+			p {
+				padding: 20px 0;
+			&:first-child {
+				text-align: center;
+				@include fontz($dark_green,20px, 24px);
+			}
+			&:nth-child(2) {
+				text-align: center;
+				background-color: #fff;
+				@include fontz($dark_green,20px, 24px);
+
+			}
+			}
+			
+			ol {
+				padding: 10px 10px 40px 40px;
+				@include fontz($dark_green,16px, 24px);
+			}
+			a {
+				display: inline-block;
+				padding: 10px;
+				background-color: #fff;
+				@include fontz($dark_green,16px, 24px);
+				width: 80%;
+				border-radius: 5px;
+				text-align: center;
+				position: absolute;
+				bottom: 10px;
+				left: 30px;
+			}
+	}
 }
-&:active {
-	color: grey;
+.contact_logo {
+	@extend %all_h;
+	@include fontz($dark_green,30px,34px);
+	@extend %paddings;
 }
+.contacts {
+	padding: 0 0 30px 0;
+	margin: 0 0 0 20%;
+	display: grid;
+	grid-template-columns: 50% 33%;
+		form {
+			padding: 0 20px 0 0;
+			input {
+				width: 100%;
+				border-radius: 10px;
+				margin: 0 0 10px 0;
+				padding: 10px;
+				display: block;
+				@include fontz($dark_green,20px,24px);
+
+			&:nth-child(3) {
+				padding: 10px 0 200px 10px;
+			}
+		}
+		button {
+			@include fontz($dark_green,20px,24px);
+			padding: 10px;
+			border-radius: 10px;
+			margin: 0 0 0 40%;
+			background-color: #fff;
+		}
+	}
+	.links {
+		margin: 0 0 0 50px;
+		ul {
+			li {
+				padding: 3px 10px;
+				@include fontz($dark_green,20px,30px);
+				position: relative;
+				&:first-child:before {
+					content: '';
+					position: absolute;
+					height: 30px;
+					width: 30px;
+					background: url('../img/icons/skype.png') 0 0 no-repeat;
+					top: 5px;
+					left: -30px;
+				}
+				&:nth-child(2):before {
+					content: '';
+					position: absolute;
+					height: 30px;
+					width: 30px;
+					background: url('../img/icons/vk.png') 0 0 no-repeat;
+					top: 5px;
+					left: -30px;
+				}
+				
+				&:nth-child(3):before {
+					content: '';
+					position: absolute;
+					height: 30px;
+					width: 30px;
+					background: url('../img/icons/email.png') 0 0 no-repeat;
+					top: 5px;
+					left: -30px;
+				}
+				&:last-child:before {
+					content: '';
+					position: absolute;
+					height: 30px;
+					width: 30px;
+					background: url('../img/icons/phone.png') 0 0 no-repeat;
+					top: 5px;
+					left: -30px;
+				}
+			}
+		}
+	}
 }
-.link-2 {
-	@include fontz(100px,green);
-	@extend %tplborder;
+
+.footer {
+@extend %all_h;
+	@include fontz($dark_green,16px,18px);
+	padding: 20px 0;
+	background-color: #fff;
 }
