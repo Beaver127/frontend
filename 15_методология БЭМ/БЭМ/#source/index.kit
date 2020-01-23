@@ -1,78 +1,233 @@
-<!-- Сообщаем браузеру как стоит обрабатывать эту страницу -->
 <!DOCTYPE html>
-<!-- Оболочка документа, указываем язык содержимого -->
 <html lang="ru">
-	<!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
 	<head>
-		<!-- Заголовок страницы в браузере -->
-		<title>Подключаем шрифты</title>
-		
-		<!-- Подключаем CSS -->
+		<title>бэм</title>
 		<link rel="stylesheet" href="css/style.css" />
 		<!-- Кодировка страницы -->
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 	</head>
 	<body>
+
+		<header class="header">
+			<div class="header__body">
+				<div class="header__logo">
+					<a href="#"><img class="logo__icon" src="img/logo/logo1.svg" alt=""></a>
+				</div>
+				<div class="header__title title">
+					<h1>Clear, smart, attractive design </h1>
+				</div>
+				<div class="header__subtitle">
+					<p>for your app, logo, website</p>
+				</div>
+				<div class="header__link">
+					<a href="#" class="link">read more</a>
+				</div>
+			</div>
+		</header>
+
+		<nav class="nav">
+			<div class="nav__body">
+			<ul class="nav__list nav__list__style">
+				<li class="nav-list__item ">
+					<a class="nav-list__link nav__list__item__style 
+					active" href="#">
+					home
+				</a>
+				</li>
+				<li class="nav-list__item"><a class="nav-list__link nav__list__item__style" href="#">about us</a></li>
+				<li class="nav-list__item"><a class="nav-list__link nav__list__item__style" href="#">portfolio</a></li>
+				<li class="nav-list__item"><a class="nav-list__link nav__list__item__style"href="#">contact</a></li>
+			</ul>
+			</div>
+		</nav>
+
 		<div class="about">
 			<div class="about__body">
-				<div class="about__header">
-					<div class="about__title title">
-						about
-					</div>
-					<div class="about__text">
-						We specialize in contemporary, functional, and stunning websites with design that really brings that "WOW" factor. 
-						In our design process, we make sure to stay one step ahead of the latest trends, 
-						never forgetting to abide by key web standards.
+				<div class="about__top">
+					<div class="about__title title title-black">
+					<h2>ABOUT</h2>
+				</div>
+				<div class="about__text">
+					<p>We specialize in contemporary, functional, and stunning websites with design that really brings that "WOW" factor. 
+					In our design process, we make sure to stay one step ahead of the latest trends, 
+					never forgetting to abide by key web standards.</p>
 					</div>
 				</div>
-
-				<div class="about_row">
-					<div class="about__colum">
-						<div class="item-about">
-							<div class="item-about__icon">
-								<img src="img/about/1.png" alt="">
+					<div class="about__row">
+						<div class="about__column">
+							<div class="column__icon">
+								<img src="img/item-icons/1.png" alt="">
 							</div>
-							<div class="item-about__title">
+							<div class="column__title">
 								WEB
 							</div>
-							<div class="item-about__text">
+							<div class="column__text">
 								We tend to deliver unique and 
 								functional design, through 
 								innovation and creativity.
 							</div>
 						</div>
-					</div>
-					<div class="about__colum">
-						<div class="item-about">
-							<div class="item-about__icon">
-								<img src="img/about/2.png" alt="">
+
+						<div class="about__column">
+							<div class="column__icon">
+								<img src="img/item-icons/2.png" alt="">
 							</div>
-							<div class="item-about__title">
+							<div class="column__title">
 								iOS AND ANDROID
 							</div>
-							<div class="item-about__text">
+							<div class="column__text">
 								We seek to bring new businesses and 
 								customers closer together through valuable 
 								insights and proper targeting.
 							</div>
 						</div>
-					</div>
-					<div class="about__colum">
-						<div class="item-about">
-							<div class="item-about__icon">
-								<img src="img/about/3.png" alt="">
+
+
+						<div class="about__column">
+							<div class="column__icon">
+								<img src="img/item-icons/3.png" alt="">
 							</div>
-							<div class="item-about__title">
+							<div class="column__title">
 								MARKETING
 							</div>
-							<div class="item-about__text">
+							<div class="column__text">
 								We’ll help you establish the right goals 
 								and build the right paths. Success depends 
 								on setting the right intention.
 							</div>
 						</div>
 					</div>
+			</div>
+		</div>
+
+		<div class="portfolio">
+			<div class="portfolio__body">
+				<div class="portfolio__title title title-black">
+					<h2>PORTFOLIO</h2>
 				</div>
+				<div class="portfolio__sort">
+					<ul class="portfolio__list nav__list__style">
+						<li class="list__item nav__list__item__style active">ALL</li>
+						<li class="list__item nav__list__item__style">WEB</li>
+						<li class="list__item nav__list__item__style">APPS</li>
+						<li class="list__item nav__list__item__style">OTHER</li>
+					</ul>
+				</div>
+				<div class="portfolio__pictures">
+					<div class="portfolio__grid">
+						<div class="grid__item"><img class="grid__item__picture" src="img/bg/Background_image.jpg" alt="" href="#"></div>
+						<div class="grid__item"><img class="grid__item__picture" src="img/bg/Background_image.jpg" alt="" href="#"></div>
+						<div class="grid__item"><img class="grid__item__picture" src="img/bg/Background_image.jpg" alt="" href="#"></div>
+						<div class="grid__item"><img class="grid__item__picture" src="img/bg/Background_image.jpg" alt="" href="#"></div>
+						<div class="grid__item"><img class="grid__item__picture" src="img/bg/Background_image.jpg" alt="" href="#"></div>
+						<div class="grid__item"><img class="grid__item__picture" src="img/bg/Background_image.jpg" alt="" href="#"></div>
+					</div>
+				</div>
+				<div class="portfolio__bottom">
+					<a href="" class="bottom__link link">read more</a>
+				</div>
+			</div>
+		</div>
+		<div class="bottom-logos">
+			<div class="bottom-logos__body">
+				<p class="logos__title">Our partners</p>
+				<div class="logos__pictures">
+					<img src="img/logo/1.svg" alt="" class="pictures__picture">
+					<img src="img/logo/2.png" alt="" class="pictures__picture">
+					<img src="img/logo/3.png" alt="" class="pictures__picture">
+					<img src="img/logo/4.png" alt="" class="pictures__picture">
+				</div>
+			</div>
+		</div>
+		<!-- <div class="contact">
+			<div class="contact__body">
+
+				<div class="contact__content">
+						<div class="content__title">
+							<h2 class="title title-black">CONTACT</h2>
+						</div>
+						<div class="content__flexwrap">
+							<div class="content__item">
+							<form class="content__form" action="#" method="post">
+							
+							<input type="text" class="form__text input">
+							<input type="email" class="form__email input">
+							<textarea  type="textarea" class="form__textarea input"></textarea>
+							<button type="submit" class="form__submit"></button>
+						</form>
+						</div>
+					<div class="content__item">
+						<p class="links__text">Have an idea for a project? Just looking to explore and see the possibilities?I'm here to help.</p>
+						<p class="links__name">Postma ELena</p>
+						<div class="links__social">
+						<a href="#" class="facebook">f</a>
+						<a href="#" class="instagram">in</a>
+						</div>
+						e-mail: <a href="mailto:postma.elena@gmail.com">postma.elena@gmail.com</a>
+					</div>
+						</div>
+				</div>
+			</div>
+		</div> -->
+		<div class="contact">
+			<div class="contact__body">
+				<div class="contact__title">
+					<h2 class="title title-black">CONTACT</h2>
+				</div>
+				<div class="contact__wrap">
+					<div class="contact__formwrap contact__wrap__item">
+						<form action="#" method="get" class="contact__form">
+							<div class="form__top">
+								<div class="form__input-wrap">
+									<div class="top__text">YOUR NAME</div>
+									<input type="text" class="form__inputtext input">
+								</div>
+								<div class="form__input-wrap">
+									<div class="top__text">YOUT E-MAIL</div>
+									<input type="email" class="form__inputemail input">
+								</div>
+							</div>
+							<div class="form__bottom">
+								<div class="form__textarea-wrap">
+									<div class="top__text">MESSAGE</div>
+									<textarea name="text123" class="input form__textarea">Text area</textarea>
+								</div>
+								
+								<div class="form__button-wrap">
+									<button class="form__button" type="sumbit">SEND</button>
+								</div>
+								
+							</div>
+						</form>
+					</div>
+					<div class="contact__linkswrap contact__wrap__item">
+						<div class="contact__links">
+							<div class="links__text">Have an idea for a project? Just looking to explore and see the possibilities? <br>I'm here to help.</div>
+						<div class="links__name">Postma ELena</div>
+						<div class="links__social">
+						<a href="#" class="facebook">f</a>
+						<a href="#" class="instagram">in</a>
+						</div>
+						e-mail: <a class="links__email" href="mailto:postma.elena@gmail.com">postma.elena@gmail.com</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer__logo">
+				<img class="logo__img" src="../img/logo/logo2.png" alt="">
+			</div>
+			<div class="footer__nav">
+				<div class="nav__wrap">
+					<div class="nav__item"><a href="#" class="nav__link">Home</a></div>
+					<div class="nav__item"><a href="#" class="nav__link">Facebook</a></div>
+					<div class="nav__item"><a href="#" class="nav__link">Linkedin</a></div>
+					<div class="nav__item"><a href="#" class="nav__link">Contact</a></div>
+				</div>
+			</div>
+			<div class="footer__copyright-wrap">
+				<span class="footer__copyright">© 2015. All Rights Reserved </span>
 			</div>
 		</div>
 	</body>
